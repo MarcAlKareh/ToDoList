@@ -4,6 +4,57 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(235, 235, 235);
+  font-family: "Radio Canada", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 70%;
+  /* border: 1px solid blue; */
+}
+
+.container {
+  /* border: 2px solid red; */
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+
+.app-title {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.task-input-container {
+  display: flex;
+  gap: 0;
+  width: 100%;
+}
+
+.task-input {
+  padding: 10px 30px;
+  border: 1px solid #8df371;
+  width: 80%;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.add-task {
+  background: none;
+  border: 1px solid #8df371;
+  color: #518344;
+  padding: 0 20px;
+  width: 20%;
+  cursor: pointer;
+  font-size: 16px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
