@@ -2,6 +2,19 @@ const taskInputEl = document.querySelector('.task-input');
 const addTaskBtn = document.querySelector('.add-task');
 const tasksContainer = document.querySelector('.tasks-container');
 
+const handleTaskIcons = function (e) {
+  // TODO
+  // Check if user clicked on task icons
+  if (
+    e.target.classList.contains('completed-icon') ||
+    e.target.classList.contains('delete-icon')
+  ) {
+    // Get closest task element and delete it
+    const taskEl = e.target.closest('.task');
+    tasksContainer.removeChild(taskEl);
+  }
+};
+
 const addTask = function (task) {
   // Check if the task input is valid
   if (!task)
@@ -49,7 +62,13 @@ const addTask = function (task) {
 
   // Clear input box
   taskInputEl.value = '';
+
+  // Listen for click event on task container
+  tasksContainer.addEventListener('click', handleTaskIcons);
 };
 
-// Listen for click event of add task button
+// Listen for click event of add task button and if user clicks enter key
 addTaskBtn.addEventListener('click', () => addTask(taskInputEl.value));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') addTask(taskInputEl.value);
+});
